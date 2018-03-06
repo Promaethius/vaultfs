@@ -14,7 +14,7 @@ cache:
 
 install:
   - mkdir tools
-  - curl -L https://github.com/Masterminds/glide/releases/download/0.13.1/glide-0.13.1-linux-amd64.tar.gz | tar -xzv --strip-components=1 -C tools
+  - curl -L https://github.com/Masterminds/glide/releases/download/v0.13.1/glide-v0.13.1-linux-amd64.tar.gz | tar -xzv --strip-components=1 -C tools
   - chmod +x tools/glide
   - export PATH=$(pwd)/tools:$PATH
   - glide install
