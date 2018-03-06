@@ -1,4 +1,4 @@
-package: github.com/asteris-llc/vaultfs
+package: github.com/promaethius/vaultfs
 import:
 - package: bazil.org/fuse
   subpackages:
