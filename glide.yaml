@@ -1,4 +1,4 @@
-package: github.com/promaethius/vaultfs
+package: github.com/Promaethius/vaultfs
 import:
 - package: bazil.org/fuse
   subpackages:
