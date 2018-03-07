@@ -3,7 +3,7 @@ import:
 - package: bazil.org/fuse
   subpackages:
   - fs
-- package: github.com/Sirupsen/logrus
+- package: github.com/sirupsen/logrus
   subpackages:
   - hooks/syslog
 - package: github.com/docker/go-plugins-helpers
