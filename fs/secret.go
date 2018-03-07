@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 
 	"bazil.org/fuse"
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/hashicorp/vault/api"
 	"golang.org/x/net/context"
 )
