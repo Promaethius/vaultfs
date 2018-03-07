@@ -17,7 +17,7 @@ package cmd
 import (
 	"errors"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/Promaethius/vaultfs/docker"
 	"github.com/Promaethius/vaultfs/fs"
 	"github.com/docker/go-plugins-helpers/volume"
