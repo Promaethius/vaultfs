@@ -21,7 +21,7 @@ import (
 	"syscall"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/asteris-llc/vaultfs/fs"
+	"github.com/Promaethius/vaultfs/fs"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
