@@ -24,7 +24,7 @@ import (
 const Name = "vaultfs"
 
 // Version describes the version of this tool
-const Version = "1.0.0"
+const Version = "0.1"
 
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
