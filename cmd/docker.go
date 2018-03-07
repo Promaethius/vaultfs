@@ -18,8 +18,8 @@ import (
 	"errors"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/asteris-llc/vaultfs/docker"
-	"github.com/asteris-llc/vaultfs/fs"
+	"github.com/Promaethius/vaultfs/docker"
+	"github.com/Promaethius/vaultfs/fs"
 	"github.com/docker/go-plugins-helpers/volume"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
