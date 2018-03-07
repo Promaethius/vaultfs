@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/asteris-llc/vaultfs/cmd"
+import "github.com/Promaethius/vaultfs/cmd"
 
 func main() {
 	cmd.Execute()
