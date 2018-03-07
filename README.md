@@ -22,7 +22,7 @@ This project is in early development and has not reached 1.0. You will have to
 build the binary yourself:
 
 ```shell
-go get github.com/asteris-llc/vaultfs
+go get github.com/Promaethius/vaultfs
 env GOOS=linux go build github.com/asteris-llc/vaultfs
 ```
 
