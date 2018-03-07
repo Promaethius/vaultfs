@@ -3,10 +3,7 @@ language: go
 
 # we support the most two recent releases, and (hopefully) the tip.
 go:
-  - 1.5
-  - 1.6
   - "1.10"
-  - tip
 
 cache:
   directories:
@@ -22,7 +19,3 @@ install:
 script:
   - make fmt
   - make
-
-matrix:
-  allow_failures:
-    - go: tip
