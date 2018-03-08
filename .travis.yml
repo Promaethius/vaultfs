@@ -27,4 +27,4 @@ after_success:
   - export VAULT_ADDR='http://127.0.0.1:8200' && vault write secret/hello value=world
   - mkdir $HOME/vaultfs
   - ./vaultfs mount $HOME/vaultfs -a http://127.0.0.1:8200 -i -r secret -t vaultfstest &
-  - cat /vaultfs/hello
+  - cat $HOME/vaultfs/hello
