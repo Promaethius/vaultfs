@@ -1,6 +1,6 @@
 # VaultFS
 
-[![Build Status](https://travis-ci.org/Promaethius/vaultfs.svg?branch=master)](https://travis-ci.org/Promaethius/vaultfs)
+[![Build Status](https://travis-ci.org/Promaethius/vaultfs.svg?branch=fuse)](https://travis-ci.org/Promaethius/vaultfs)
 
 VaultFS mounts arbitrary [Vault](https://vaultproject.io/) prefixes in a FUSE
 filesystem. It also provides a Docker volume plugin to the do the same for your
