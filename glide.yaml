@@ -6,9 +6,6 @@ import:
 - package: github.com/sirupsen/logrus
   subpackages:
   - hooks/syslog
-- package: github.com/docker/go-plugins-helpers
-  subpackages:
-  - volume
 - package: github.com/hashicorp/vault
   subpackages:
   - api
