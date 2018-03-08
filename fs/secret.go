@@ -15,7 +15,7 @@
 package fs
 
 import (
-	"encoding/json"
+	"github.com/buger/jsonparser"
 
 	"bazil.org/fuse"
 	"github.com/sirupsen/logrus"
@@ -46,5 +46,5 @@ func (s Secret) Attr(ctx context.Context, a *fuse.Attr) error {
 
 // ReadAll gets the content of this Secret
 func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
-	return json.Marshal(s)
+	return jsonparser.Get(s, "data", "value")
 }
