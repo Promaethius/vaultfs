@@ -1,5 +1,6 @@
 package: github.com/Promaethius/vaultfs
 import:
+- package: github.com/buger/jsonparser
 - package: bazil.org/fuse
   subpackages:
   - fs
