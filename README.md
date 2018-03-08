@@ -21,7 +21,7 @@ build the binary yourself:
 
 ```shell
 go get github.com/Promaethius/vaultfs
-env GOOS=linux go build github.com/asteris-llc/vaultfs
+env GOOS=linux go build github.com/Promaethius/vaultfs
 ```
 
 # Usage
