@@ -63,7 +63,7 @@ func initLogging() {
 			logrus.WarnLevel:  dest.Opaque,
 			logrus.ErrorLevel: dest.Opaque,
 			logrus.FatalLevel: dest.Opaque,
-		}))
+		}, &logrus.JSONFormatter{}))
 	case "journald":
 		journalhook.Enable()
 	case "syslog":
