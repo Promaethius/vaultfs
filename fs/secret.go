@@ -46,7 +46,7 @@ func (s Secret) Attr(ctx context.Context, a *fuse.Attr) error {
 
 // ReadAll gets the content of this Secret
 func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
-	val, err := jsonparser.Get([]byte(s), "data", "value")
+	val, err := jsonparser.Get([]byte(s.inode), "data", "value")
 	if err != nil {
 		return err
 	}
