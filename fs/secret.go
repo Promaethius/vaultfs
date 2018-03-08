@@ -48,8 +48,7 @@ func (s Secret) Attr(ctx context.Context, a *fuse.Attr) error {
 func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
 	val, err := jsonparser.Get(s, "data", "value")
 	if err != nil {
-		logrus.WithError(err).Error("value is missing")
-		return nil
+		return err
 	}
 	return val
 }
