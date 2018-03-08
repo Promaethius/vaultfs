@@ -19,7 +19,7 @@ import (
 	"net/url"
 
 	"github.com/sirupsen/logrus"
-	logrus_syslog "github.com/Sirupsen/logrus/hooks/syslog"
+	logrus_syslog "github.com/sirupsen/logrus/hooks/syslog"
 	"github.com/rifflock/lfshook"
 	"github.com/spf13/viper"
 	"github.com/wercker/journalhook"
@@ -49,7 +49,6 @@ func initLogging() {
 	// output
 	dest, err := url.Parse(viper.GetString("log-destination"))
 	if err != nil {
-		logrus.WithError(err).WithField("destination", viper.GetString("log-destination")).Error(`invalid log destination. Defaulting to "stdout:"`)
 		dest.Scheme = "stdout"
 	}
 
@@ -63,7 +62,7 @@ func initLogging() {
 			logrus.WarnLevel:  dest.Opaque,
 			logrus.ErrorLevel: dest.Opaque,
 			logrus.FatalLevel: dest.Opaque,
-		}, &logrus.JSONFormatter{}))
+		}, &logrus.TextFormatter{}))
 	case "journald":
 		journalhook.Enable()
 	case "syslog":
