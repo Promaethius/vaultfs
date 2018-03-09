@@ -17,7 +17,6 @@ package fs
 import (
 	"encoding/json"
 	
-	"github.com/buger/jsonparser"
 	"bazil.org/fuse"
 	"github.com/sirupsen/logrus"
 	"github.com/hashicorp/vault/api"
