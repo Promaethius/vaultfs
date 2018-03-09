@@ -48,10 +48,11 @@ func (s Secret) Attr(ctx context.Context, a *fuse.Attr) error {
 // ReadAll gets the content of this Secret
 // Logic tries to parse the data portion of the file, on failure, returns entire byte stream
 func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
-	value, _, _, err := jsonparser.Get(json.Marshal(s), "data", "value")
+	byteValue, err := json.Marshal(s)
+	dataValue, _, _, err := jsonparser.Get(byteValue, "data", "value")
 	if err != nil {
 		logrus.WithError(err).Error("could not parse secret")
 		return json.Marshal(s)
 	}
-	return value
+	return dataValue
 }
