@@ -54,7 +54,6 @@ func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
 	}
 	
 	var dataValue []byte
-	var err error
 	
 	paths := [][]string{
 	[]string{"data", "value"},
