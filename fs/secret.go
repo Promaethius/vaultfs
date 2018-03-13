@@ -69,7 +69,7 @@ func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
 		} else {
 			switch idx {
 			default:
-				dataValue, _ = value
+				dataValue = value
 			}
 		}
 	}, paths...)
