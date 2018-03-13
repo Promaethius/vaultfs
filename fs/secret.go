@@ -53,7 +53,23 @@ func (s Secret) ReadAll(ctx context.Context) ([]byte, error) {
 		return byteValue, err
 	}
 	
-	dataValue, _, _, err := jsonparser.Get(byteValue, "data", "value")
+	var dataValue []byte
+	var err error
+	
+	paths := [][]string{
+	[]string{"data", "value"},
+	[]string{"data", "ca"},
+	[]string{"data", "ca_chain"},
+	[]string{"data", "certificate"},
+	}
+	
+	jsonparser.EachKey(byteValue, func(idx int, value []byte, vt jsonparser.ValueType, err error){
+		switch idx {
+			default:
+				dataValue, err = value
+		}
+	}, paths...)
+	
 	if err != nil {
 		logrus.WithError(err).Error("could not parse secret")
 		return byteValue, err
