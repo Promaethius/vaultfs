@@ -30,6 +30,7 @@ after_success:
   - ./vaultfs mount $HOME/vaultfs_pki -a http://127.0.0.1:8200 -i -r pki/certs -t vaultfstest &
   - ./vaultfs mount $HOME/vaultfs_keyless -a http://127.0.0.1:8200 -i -r pki -t vaultfstest &
   - ls $HOME/vaultfs_secret
-  - cat $HOME/vaultfs_secret/hello
+  - cat $HOME/vaultfs_secret/*
   - ls $HOME/vaultfs_pki
+  - cat $HOME/vaultfs_pki/*
   - ls $HOME/vaultfs_keyless
