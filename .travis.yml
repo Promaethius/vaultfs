@@ -15,8 +15,10 @@ install:
   - chmod +x tools/glide
   - export PATH=$(pwd)/tools:$PATH
   - glide install
-
-script:
+  
+build:
   - make fmt
   - make
-  - /bin/bash -c ./tests/filesystem.sh
+
+script:
+  - ./tests/filesystem.sh
