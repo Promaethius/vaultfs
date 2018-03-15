@@ -19,8 +19,4 @@ install:
 script:
   - make fmt
   - make
-  
-jobs:
-  include:
-    - stage: file-system
-      script: ./tests/filesystem.sh
+  - /bin/bash -c ./tests/filesystem.sh
