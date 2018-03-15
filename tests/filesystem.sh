@@ -8,9 +8,9 @@ curl -L https://releases.hashicorp.com/vault/0.9.5/vault_0.9.5_linux_amd64.zip >
 echo 'vaultfstest' > ~/.vault-token
 export VAULT_ADDR='http://127.0.0.1:8200' && vault write secret/hello value=world && vault secrets enable pki && vault write pki/root/generate/internal common_name=my-website.com ttl=8760h
 mkdir $HOME/vaultfs_secret && mkdir $HOME/vaultfs_pki && mkdir $HOME/vaultfs_keyless
-$HOME/vaultfs mount $HOME/vaultfs_secret -a http://127.0.0.1:8200 -i -r secret -t vaultfstest &
-$HOME/vaultfs mount $HOME/vaultfs_pki -a http://127.0.0.1:8200 -i -r pki/certs -t vaultfstest &
-$HOME/vaultfs mount $HOME/vaultfs_keyless -a http://127.0.0.1:8200 -i -r pki -t vaultfstest &
+./vaultfs mount $HOME/vaultfs_secret -a http://127.0.0.1:8200 -i -r secret -t vaultfstest &
+./vaultfs mount $HOME/vaultfs_pki -a http://127.0.0.1:8200 -i -r pki/certs -t vaultfstest &
+./vaultfs mount $HOME/vaultfs_keyless -a http://127.0.0.1:8200 -i -r pki -t vaultfstest &
 ls $HOME/vaultfs_secret
 cat $HOME/vaultfs_secret/*
 ls $HOME/vaultfs_pki
