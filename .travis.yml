@@ -27,7 +27,7 @@ after_success:
   - export VAULT_ADDR='http://127.0.0.1:8200' && vault write secret/hello value=world && vault secrets enable pki && vault write pki/root/generate/internal common_name=my-website.com ttl=8760h
   - mkdir $HOME/vaultfs_secret && mkdir $HOME/vaultfs_pki
   - ./vaultfs mount $HOME/vaultfs_secret -a http://127.0.0.1:8200 -i -r secret -t vaultfstest &
-  - ./vaultfs mount $HOME/vaultfs_pki -a http://127.0.0.1:8200 -i -r pki -t vaultfstest &
+  - ./vaultfs mount $HOME/vaultfs_pki -a http://127.0.0.1:8200 -i -r pki/certs -t vaultfstest &
   - ls $HOME/vaultfs_secret
   - cat $HOME/vaultfs_secret/hello
   - ls $HOME/vaultfs_pki
