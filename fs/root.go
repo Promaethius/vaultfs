@@ -81,7 +81,7 @@ func (r *Root) ReadDirAll(ctx context.Context) ([]fuse.Dirent, error) {
 	}
 
 	if secrets.Data["keys"] == nil {
-		return []fuse.Dirent{}, nil
+		return nil, nil
 	}
 
 	dirs := []fuse.Dirent{}
