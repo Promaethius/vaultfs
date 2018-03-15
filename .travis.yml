@@ -9,7 +9,7 @@ cache:
   directories:
     - vendor
 
-before_install::
+before_install:
   - mkdir tools
   - curl -L https://github.com/Masterminds/glide/releases/download/v0.13.1/glide-v0.13.1-linux-amd64.tar.gz | tar -xzv --strip-components=1 -C tools
   - chmod +x tools/glide
