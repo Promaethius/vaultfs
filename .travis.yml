@@ -8,6 +8,11 @@ go:
 cache:
   directories:
     - vendor
+    
+stages:
+  - install
+  - build
+  - script
 
 install:
   - mkdir tools
