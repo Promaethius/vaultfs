@@ -26,4 +26,4 @@ build:
   - make
 
 script:
-  - ./tests/filesystem.sh
+  - bash ./tests/filesystem.sh
