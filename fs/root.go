@@ -53,10 +53,9 @@ func (Root) Attr(ctx context.Context, a *fuse.Attr) error {
 
 // Lookup looks up a path
 func (r *Root) Lookup(ctx context.Context, name string) (fs.Node, error) {
-	logrus.WithField("name", name).Debug("handling Root.Lookup call")
-
 	// TODO: handle context cancellation
 	secret, err := r.logic.Read(path.Join(r.root, name))
+	logrus.WithFields(logrus.Fields{"name": name, "secret": secret}).Debug("handling Root.Lookup call")
 	if secret == nil && err == nil {
 		return nil, fuse.ENOENT
 	} else if err != nil {
