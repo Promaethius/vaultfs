@@ -57,6 +57,7 @@ func (r *Root) Lookup(ctx context.Context, name string) (fs.Node, error) {
 	secret, err := r.logic.Read(path.Join(r.root, name))
 	logrus.WithFields(logrus.Fields{"name": name, "secret": secret}).Debug("handling Root.Lookup call")
 	if secret == nil && err == nil {
+		logrus.Debug("returning nil secret")
 		return nil, fuse.ENOENT
 	} else if err != nil {
 		logrus.WithError(err).WithFields(logrus.Fields{"root": r.root, "name": name}).Error("error reading key")
@@ -71,15 +72,15 @@ func (r *Root) Lookup(ctx context.Context, name string) (fs.Node, error) {
 
 // ReadDirAll returns a list of secrets
 func (r *Root) ReadDirAll(ctx context.Context) ([]fuse.Dirent, error) {
-	logrus.Debug("handling Root.ReadDirAll call")
-
 	secrets, err := r.logic.List(path.Join(r.root))
+	logrus.WithFields(logrus.Fields{"secret": secret}).Debug("handling Root.ReadDirAll call")
 	if err != nil {
 		logrus.WithError(err).WithFields(logrus.Fields{"root": r.root}).Error("error reading secrets")
 		return nil, fuse.EIO
 	}
 
 	if secrets.Data["keys"] == nil {
+		logrus.Debug("no keys exist, returning empty folder")
 		return []fuse.Dirent{}, nil
 	}
 
