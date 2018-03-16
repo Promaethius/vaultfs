@@ -73,7 +73,7 @@ func (r *Root) Lookup(ctx context.Context, name string) (fs.Node, error) {
 // ReadDirAll returns a list of secrets
 func (r *Root) ReadDirAll(ctx context.Context) ([]fuse.Dirent, error) {
 	secrets, err := r.logic.List(path.Join(r.root))
-	logrus.WithFields(logrus.Fields{"secret": secret}).Debug("handling Root.ReadDirAll call")
+	logrus.WithFields(logrus.Fields{"secret": secrets.Data}).Debug("handling Root.ReadDirAll call")
 	if err != nil {
 		logrus.WithError(err).WithFields(logrus.Fields{"root": r.root}).Error("error reading secrets")
 		return nil, fuse.EIO
